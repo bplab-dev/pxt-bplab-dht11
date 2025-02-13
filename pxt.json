@@ -2,8 +2,7 @@
     "name": "DHT11 - bplab",
     "description": "",
     "dependencies": {
-        "core": "*",
-        "microphone": "*"
+        "core": "*"
     },
     "files": [
         "main.blocks",
