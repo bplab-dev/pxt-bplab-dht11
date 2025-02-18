@@ -22,6 +22,8 @@ namespace dht11 {
      * @param dht11pin describe parameter here
      */
     //% blockId="readdht11" block="value of dht11 %dht11type| at pin %dht11pin"
+    //% tooltip="Reads the temperature or humidity from a DHT11 sensor connected to the specified pin."
+    //% help="https://"
     export function dht11value(dht11type: DHT11Type, dht11pin: DigitalPin): number {
         const DHT11_TIMEOUT = 100
         const buffer = pins.createBuffer(40)
@@ -29,7 +31,7 @@ namespace dht11 {
         let startTime = control.micros()
 
         if (control.hardwareVersion().slice(0, 1) !== '1') { // V2
-            // TODO: V2 bug
+            // V2 bug
             pins.digitalReadPin(DigitalPin.P0);
             pins.digitalReadPin(DigitalPin.P1);
             pins.digitalReadPin(DigitalPin.P2);
