@@ -1,5 +1,5 @@
 {
-    "name": "DHT11 - bplab",
+    "name": "dht11-bplab",
     "version": "0.0.1",
     "description": "",
     "dependencies": {
