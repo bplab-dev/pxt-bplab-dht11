@@ -1,0 +1,5 @@
+{
+  "dht11": "온습도",
+  "dht11.dht11value": "온습도 센서에서 온도와 습도 값을 읽어옵니다",
+  "dht11.dht11value|param|dht11pin": "온습도 연결 핀"
+}

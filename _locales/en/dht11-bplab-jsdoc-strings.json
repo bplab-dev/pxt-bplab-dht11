@@ -1,0 +1,5 @@
+{
+  "dht11": "DHT11",
+  "dht11.dht11value": "get dht11 temperature and humidity Value",
+  "dht11.dht11value|param|dht11pin": "describe parameter here"
+}
