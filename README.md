@@ -10,6 +10,7 @@ This extension allows you to read temperature and humidity data from a DHT11 sen
 - Supports both micro:bit V1 and V2 hardware versions
 - Built-in timeout protection for stable readings
 - Can be registered as a MakeCode extension for easy use
+- Support for Korean
 
 ## Blocks
 
@@ -62,6 +63,22 @@ export function dht11value(dht11type: DHT11Type, dht11pin: DigitalPin): number;
   // Read humidity
   let humidity = dht11.dht11value(DHT11Type.DHT11_humidity, DigitalPin.P0);
   ```
+
+## 📜 License
+
+MIT License
+
+## 💡 About BPLab
+
+BPLab is a specialized company that provides coding education that anyone can easily learn. We provide in-person and online coding education for children, teens, adults, institutions, organizations, small groups, and schools in Korea in various fields such as IoT, artificial intelligence, micro:bit and Arduino.
+
+We are also leading the way in developing and distributing coding education kits that allow learners to build, program, and experience the principles of coding. These kits utilize microcontrollers such as Arduino and micro:bit, as well as various sensors. This micro:bit extension is available for use in courses taught by BPLab.
+
+Visit our websites:
+
+- Korea: https://bplab.kr
+- Global: https://bplab-us.com
+- Japan: https://bplab-jp.com
 
 ---
 
