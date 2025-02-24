@@ -23,19 +23,19 @@ namespace dht11test {
 
   // Validate temperature range (Celsius)
   function testTemperatureC(): boolean {
-      const temp = dht11.dht11value(dht11.DHT11Type.DHT11_temperature_C, DHT11_PIN);
+      const temp = dht11.dht11value(DHT11_PIN, dht11.DHT11Type.DHT11_temperature_C);
       return temp >= 0 && temp <= 50;
   }
 
   // Validate temperature range (Fahrenheit)
   function testTemperatureF(): boolean {
-      const temp = dht11.dht11value(dht11.DHT11Type.DHT11_temperature_F, DHT11_PIN);
+      const temp = dht11.dht11value(DHT11_PIN, dht11.DHT11Type.DHT11_temperature_F);
       return temp >= 32 && temp <= 122;
   }
 
   // Validate humidity range
   function testHumidity(): boolean {
-      const humidity = dht11.dht11value(dht11.DHT11Type.DHT11_humidity, DHT11_PIN);
+      const humidity = dht11.dht11value(DHT11_PIN, dht11.DHT11Type.DHT11_humidity);
       return humidity >= 20 && humidity <= 90;
   }
 
@@ -90,10 +90,10 @@ dht11test.runTests();
 
 // Display real-time temperature and humidity on LED matrix
 basic.forever(function() {
-  // Show temperature(℃)
-  basic.showNumber(dht11.dht11value(dht11.DHT11Type.DHT11_temperature_C, DigitalPin.P0));
-  basic.pause(1000);
-  // Show humidity
-  basic.showNumber(dht11.dht11value(dht11.DHT11Type.DHT11_humidity, DigitalPin.P0));
-  basic.pause(1000);
+    // Show temperature(℃)
+    basic.showNumber(dht11.dht11value(DigitalPin.P0, dht11.DHT11Type.DHT11_temperature_C));
+    basic.pause(1000);
+    // Show humidity
+    basic.showNumber(dht11.dht11value(DigitalPin.P0, dht11.DHT11Type.DHT11_humidity));
+    basic.pause(1000);
 });

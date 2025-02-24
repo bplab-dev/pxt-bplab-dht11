@@ -24,7 +24,7 @@ namespace dht11 {
     //% blockId="readdht11" block="Pin %dht11pin DHT11 %dht11type"
     //% tooltip="Reads the temperature or humidity from a DHT11 sensor connected to the specified pin."
     //% help="https://"
-    export function dht11value(dht11type: DHT11Type, dht11pin: DigitalPin): number {
+    export function dht11value(dht11pin: DigitalPin, dht11type: DHT11Type): number {
         const DHT11_TIMEOUT = 100
         const buffer = pins.createBuffer(40)
         const data = [0, 0, 0, 0, 0]
