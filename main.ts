@@ -21,7 +21,7 @@ namespace dht11 {
      * get dht11 temperature and humidity Value
      * @param dht11pin describe parameter here
      */
-    //% blockId="readdht11" block="value of dht11 %dht11type| at pin %dht11pin"
+    //% blockId="readdht11" block="Pin %dht11pin DHT11 %dht11type"
     //% tooltip="Reads the temperature or humidity from a DHT11 sensor connected to the specified pin."
     //% help="https://"
     export function dht11value(dht11type: DHT11Type, dht11pin: DigitalPin): number {
