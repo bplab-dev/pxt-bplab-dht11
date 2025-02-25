@@ -4,6 +4,15 @@
 
 This extension allows you to read temperature and humidity data from a DHT11 sensor with the micro:bit.
 
+## Use as Extension
+
+This repository can be added as an **extension** in MakeCode.
+
+- open [https://makecode.microbit.org/](https://makecode.microbit.org/)
+- click on **New Project**
+- click on **Extensions** under the gearwheel menu
+- search for **bplab-dev/pxt-bplab-dht11** and import
+
 ## 🚀 Features
 
 - Easy to read temperature (°C/°F) and humidity values from DHT11 sensor
@@ -21,11 +30,6 @@ This extension allows you to read temperature and humidity data from a DHT11 sen
 | [`DHT11_VALUE`](#1-dht11-value-block) | Read temperature (°C/°F) or humidity value from DHT11 sensor |
 
 ### 1. DHT11 Value Block
-
-```typescript
-//% blockId="readdht11" block="value of dht11 %dht11type| at pin %dht11pin"
-export function dht11value(dht11type: DHT11Type, dht11pin: DigitalPin): number;
-```
 
 - 🔹 Description
 
@@ -53,7 +57,7 @@ export function dht11value(dht11type: DHT11Type, dht11pin: DigitalPin): number;
 
 - ✅ Usage examples
 
-  ```typescript
+  ```blocks
   // Read temperature in Celsius
   let tempC = dht11.dht11value(DHT11Type.DHT11_temperature_C, DigitalPin.P0);
 
@@ -76,32 +80,11 @@ We are also leading the way in developing and distributing coding education kits
 
 Visit our websites:
 
-- Korea: https://bplab.kr
-- Global: https://bplab-us.com
-- Japan: https://bplab-jp.com
+- Korea: [https://bplab.kr](https://bplab.kr)
+- Global: [https://bplab-us.com](https://bplab-us.com)
+- Japan: [https://bplab-jp.com](https://bplab-jp.com)
 
----
-
-> Open this page at [https://bplab-dev.github.io/pxt-bplab-dht11/](https://bplab-dev.github.io/pxt-bplab-dht11/)
-
-## Use as Extension
-
-This repository can be added as an **extension** in MakeCode.
-
-- open [https://makecode.microbit.org/](https://makecode.microbit.org/)
-- click on **New Project**
-- click on **Extensions** under the gearwheel menu
-- search for **<https://github.com/bplab-dev/pxt-bplab-dht11>** and import
-
-## Edit this project
-
-To edit this repository in MakeCode.
-
-- open [https://makecode.microbit.org/](https://makecode.microbit.org/)
-- click on **Import** then click on **Import URL**
-- paste **<https://github.com/bplab-dev/pxt-bplab-dht11>** and click import
-
-### Metadata (used for search, rendering)
+## 📍 Supported targets
 
 - for PXT/microbit
 
