@@ -112,11 +112,11 @@ namespace dht11 {
         }
 
         switch (valueType) {
-            case DHT11Type.DHT11_temperature_C:
+            case DHT11Type.temperatureC:
                 return dht11Temperature
-            case DHT11Type.DHT11_temperature_F:
+            case DHT11Type.temperatureF:
                 return (dht11Temperature * 1.8) + 32
-            case DHT11Type.DHT11_humidity:
+            case DHT11Type.humidity:
                 return dht11Humidity
         }
     }
