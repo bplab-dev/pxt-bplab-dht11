@@ -4,14 +4,12 @@
 //% color=#ff7a4b icon="\uf0ad" block="DHT11" weight=1
 namespace dht11 {
     export enum DHT11Type {
-        //% block="temperature(℃)" enumval=0
-        temperatureC,
-
-        //% block="temperature(℉)" enumval=1
-        temperatureF,
-
-        //% block="humidity(0~100%)" enumval=2
-        humidity,
+        //% block="temperature(℃)"
+        temperatureC = 0,
+        //% block="temperature(℉)"
+        temperatureF = 1,
+        //% block="humidity(0~100%)"
+        humidity = 2,
     }
 
     let dht11Humidity = 0
@@ -24,6 +22,7 @@ namespace dht11 {
      */
     //% blockId="readdht11" block="DHT11 pin %pin %valueType"
     //% tooltip="Reads the temperature or humidity from a DHT11 sensor connected to the specified pin."
+    //% pin.fieldEditor="gridpicker"
     export function dht11value(pin: DigitalPin, valueType: DHT11Type): number {
         const DHT11_TIMEOUT = 100
         const buffer = pins.createBuffer(40)
