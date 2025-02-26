@@ -1,8 +1,8 @@
 {
-  "dht11.DHT11Type.DHT11_humidity|block": "습도(0~100)",
-  "dht11.DHT11Type.DHT11_temperature_C|block": "온도(℃)",
-  "dht11.DHT11Type.DHT11_temperature_F|block": "온도(℉)",
-  "dht11.dht11value|block": "핀 %dht11pin 온습도 모듈의 %dht11type 측정 값",
+  "dht11.DHT11Type.humidity|block": "습도(0~100)",
+  "dht11.DHT11Type.temperatureC|block": "온도(℃)",
+  "dht11.DHT11Type.temperatureF|block": "온도(℉)",
+  "dht11.dht11value|block": "온습도 핀 %dht11pin %dht11type 측정 값",
   "dht11|block": "온습도",
   "{id:category}Dht11": "온습도"
 }

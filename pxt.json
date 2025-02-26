@@ -1,7 +1,7 @@
 {
     "name": "dht11-bplab",
     "version": "0.0.5",
-    "description": "",
+    "description": "This extension is designed by BPLab to allow you to control the DHT11 temperature and humidity module with micro:bit.",
     "dependencies": {
         "core": "*"
     },

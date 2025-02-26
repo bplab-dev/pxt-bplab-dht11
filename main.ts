@@ -5,13 +5,13 @@
 namespace dht11 {
     export enum DHT11Type {
         //% block="temperature(℃)" enumval=0
-        DHT11_temperature_C,
+        temperatureC,
 
         //% block="temperature(℉)" enumval=1
-        DHT11_temperature_F,
+        temperatureF,
 
-        //% block="humidity(0~100)" enumval=2
-        DHT11_humidity,
+        //% block="humidity(0~100%)" enumval=2
+        humidity,
     }
 
     let dht11Humidity = 0
@@ -19,12 +19,12 @@ namespace dht11 {
 
     /**
      * get dht11 temperature and humidity Value
-     * @param dht11pin describe parameter here
+     * @param pin Analog pin connected to sensor
+     * @param valueType Select temperature(℃/℉) value or humidity percentage
      */
-    //% blockId="readdht11" block="Pin %dht11pin DHT11 %dht11type"
+    //% blockId="readdht11" block="DHT11 pin %pin %valueType"
     //% tooltip="Reads the temperature or humidity from a DHT11 sensor connected to the specified pin."
-    //% help="https://"
-    export function dht11value(dht11pin: DigitalPin, dht11type: DHT11Type): number {
+    export function dht11value(pin: DigitalPin, valueType: DHT11Type): number {
         const DHT11_TIMEOUT = 100
         const buffer = pins.createBuffer(40)
         const data = [0, 0, 0, 0, 0]
@@ -40,58 +40,58 @@ namespace dht11 {
             pins.digitalReadPin(DigitalPin.P10);
 
             // 1.start signal
-            pins.digitalWritePin(dht11pin, 0)
+            pins.digitalWritePin(pin, 0)
             basic.pause(18)
 
             // 2.pull up and wait 40us
-            pins.setPull(dht11pin, PinPullMode.PullUp)
-            pins.digitalReadPin(dht11pin)
+            pins.setPull(pin, PinPullMode.PullUp)
+            pins.digitalReadPin(pin)
             control.waitMicros(40)
 
             // 3.read data
             startTime = control.micros()
-            while (pins.digitalReadPin(dht11pin) === 0) {
+            while (pins.digitalReadPin(pin) === 0) {
                 if (control.micros() - startTime > DHT11_TIMEOUT) break
             }
             startTime = control.micros()
-            while (pins.digitalReadPin(dht11pin) === 1) {
+            while (pins.digitalReadPin(pin) === 1) {
                 if (control.micros() - startTime > DHT11_TIMEOUT) break
             }
 
             for (let dataBits = 0; dataBits < 40; dataBits++) {
                 startTime = control.micros()
-                while (pins.digitalReadPin(dht11pin) === 1) {
+                while (pins.digitalReadPin(pin) === 1) {
                     if (control.micros() - startTime > DHT11_TIMEOUT) break
                 }
                 startTime = control.micros()
-                while (pins.digitalReadPin(dht11pin) === 0) {
+                while (pins.digitalReadPin(pin) === 0) {
                     if (control.micros() - startTime > DHT11_TIMEOUT) break
                 }
                 control.waitMicros(28)
-                if (pins.digitalReadPin(dht11pin) === 1) {
+                if (pins.digitalReadPin(pin) === 1) {
                     buffer[dataBits] = 1
                 }
             }
         } else { // V1
             // 1.start signal
-            pins.digitalWritePin(dht11pin, 0)
+            pins.digitalWritePin(pin, 0)
             basic.pause(18)
 
             // 2.pull up and wait 40us
-            pins.setPull(dht11pin, PinPullMode.PullUp)
-            pins.digitalReadPin(dht11pin)
+            pins.setPull(pin, PinPullMode.PullUp)
+            pins.digitalReadPin(pin)
             control.waitMicros(40)
 
             // 3.read data
-            if (pins.digitalReadPin(dht11pin) === 0) {
-                while (pins.digitalReadPin(dht11pin) === 0);
-                while (pins.digitalReadPin(dht11pin) === 1);
+            if (pins.digitalReadPin(pin) === 0) {
+                while (pins.digitalReadPin(pin) === 0);
+                while (pins.digitalReadPin(pin) === 1);
 
                 for (let dataBits = 0; dataBits < 40; dataBits++) {
-                    while (pins.digitalReadPin(dht11pin) === 1);
-                    while (pins.digitalReadPin(dht11pin) === 0);
+                    while (pins.digitalReadPin(pin) === 1);
+                    while (pins.digitalReadPin(pin) === 0);
                     control.waitMicros(28)
-                    if (pins.digitalReadPin(dht11pin) === 1) {
+                    if (pins.digitalReadPin(pin) === 1) {
                         buffer[dataBits] = 1
                     }
                 }
@@ -111,7 +111,7 @@ namespace dht11 {
             dht11Temperature = data[2] + data[3] * 0.1
         }
 
-        switch (dht11type) {
+        switch (valueType) {
             case DHT11Type.DHT11_temperature_C:
                 return dht11Temperature
             case DHT11Type.DHT11_temperature_F:

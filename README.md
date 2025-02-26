@@ -59,13 +59,13 @@ This repository can be added as an **extension** in MakeCode.
 
   ```blocks
   // Read temperature in Celsius
-  let tempC = dht11.dht11value(DHT11Type.DHT11_temperature_C, DigitalPin.P0);
+  let tempC = dht11.dht11value(dht11.DHT11Type.temperatureC, DigitalPin.P0);
 
   // Read temperature in Fahrenheit
-  let tempF = dht11.dht11value(DHT11Type.DHT11_temperature_F, DigitalPin.P0);
+  let tempF = dht11.dht11value(dht11.DHT11Type.temperatureF, DigitalPin.P0);
 
   // Read humidity
-  let humidity = dht11.dht11value(DHT11Type.DHT11_humidity, DigitalPin.P0);
+  let humidity = dht11.dht11value(dht11.DHT11Type.humidity, DigitalPin.P0);
   ```
 
 ## 📜 License
