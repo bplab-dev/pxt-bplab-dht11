@@ -2,7 +2,7 @@
   "dht11.DHT11Type.humidity|block": "humidity(0~100)",
   "dht11.DHT11Type.temperatureC|block": "temperature(℃)",
   "dht11.DHT11Type.temperatureF|block": "temperature(℉)",
-  "dht11.dht11value|block": "Pin %dht11pin DHT11 %dht11type",
+  "dht11.dht11value|block": "Pin %pin DHT11 %valueType",
   "dht11|block": "DHT11",
   "{id:category}Dht11": "Dht11"
 }
