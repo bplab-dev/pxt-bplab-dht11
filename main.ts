@@ -1,7 +1,7 @@
 /**
  * DHT11
  */
-//% color=#ff7a4b icon="\uf0ad" block="DHT11" weight=1
+//% color=#3eb0e0 icon="\uf2c9" block="DHT11" weight=1
 namespace dht11 {
     export enum DHT11Type {
         //% block="temperature(℃)"
